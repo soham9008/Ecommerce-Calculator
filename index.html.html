@@ -451,7 +451,7 @@
       const formattedProfitOrder = profitPerOrder.toFixed(2);
       const formattedProfitDelivered = profitPerDeliveredOrder.toFixed(2);
 
-      let formulaBreakdown = '';
+    
       if (currentMode === 'ecommerce') {
         const retRate = values.returnRate || 0;
         const rtoRate = values.rtoRate || 0;
@@ -500,7 +500,7 @@
         <div class="result-item">
           <div class="result-label"><i class="fas fa-truck"></i> Delivery Rate</div>
           <div class="result-value">${formattedDelivery}% 
-            <span class="delivery-badge">${currentMode === 'ecommerce' ? '100% − Return' : '100% − RTO'}</span>
+           
           </div>
         </div>
         <div class="result-item">
