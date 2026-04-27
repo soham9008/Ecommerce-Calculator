@@ -451,7 +451,7 @@
       const formattedProfitOrder = profitPerOrder.toFixed(2);
       const formattedProfitDelivered = profitPerDeliveredOrder.toFixed(2);
 
-    
+      let formulaBreakdown = '';
       if (currentMode === 'ecommerce') {
         const retRate = values.returnRate || 0;
         const rtoRate = values.rtoRate || 0;
@@ -472,15 +472,7 @@
         const t3 = (adPack * (DR + RTOR + RTR)).toFixed(2);
         const t4 = (retCharge * (retRate / (sumRates > 0 ? sumRates : 1))).toFixed(2);
         
-        formulaBreakdown = `
-          <div class="formula-breakdown">
-            <strong>Breakdown:</strong><br>
-            + Settlement × ${(DR*100).toFixed(1)}% = ₹${t1}<br>
-            − Product Cost × ${((DR+DMR)*100).toFixed(1)}% = ₹${t2}<br>
-            − (Ad+Pack) × ${((DR+RTOR+RTR)*100).toFixed(1)}% = ₹${t3}<br>
-            − Return Charge × ${retRate}%/${sumRates.toFixed(0)}% = ₹${t4}
-          </div>
-        `;
+       
       }
 
       let roiHtml = '';
@@ -500,7 +492,7 @@
         <div class="result-item">
           <div class="result-label"><i class="fas fa-truck"></i> Delivery Rate</div>
           <div class="result-value">${formattedDelivery}% 
-           
+          
           </div>
         </div>
         <div class="result-item">
